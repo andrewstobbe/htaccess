@@ -506,3 +506,19 @@ RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
 RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 ```
 [Source](https://github.com/vincentorback/WebP-images-with-htaccess)
+
+
+### Make PHP code look like other code types
+``` apacheconf
+AddType application/x-httpd-php .asp .py .pl
+```
+
+### AddType for fonts
+Add types for font mime types. This was necesary after chaning the default file type in the httpd.conf to DefaultType application/x-httpd-php
+``` apacheconf
+AddType application/vnd.ms-fontobject    .eot
+AddType application/x-font-opentype      .otf
+AddType image/svg+xml                    .svg
+AddType application/x-font-ttf           .ttf
+AddType application/font-woff            .woff
+```
